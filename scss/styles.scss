@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
+@import "./variables";
+@import "./config";
+
+.header-nav {
+  @extend %flex;
+  margin-top: 31px;
+}
+
+.header-nav i {
+  color: $aqua;
+  font-size: 24px;
+}
+
+.header-menu {
+  margin-top: 25px;
+}
+
+.header-menu__item {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  & a span {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 18px;
+    font-family: $rale;
+    color: $font-light;
+  }
+}
