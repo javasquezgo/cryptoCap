@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "numeral": "^2.0.6",
     "remixicon": "^2.5.0",
     "sass": "^1.55.0"
   }

@@ -1,6 +1,7 @@
 import axios from "axios";
 import "remixicon/fonts/remixicon.css";
 import "./scss/styles.scss";
+import numeral from "numeral";
 
 const trendCards = document.querySelector(".trend-card");
 
@@ -18,6 +19,7 @@ const fetchCoin = async () => {
   const { data } = await api({ params: { limit: 5 } });
 
   const coins = data.data;
+  console.log("🚀 ~ file: main.js ~ line 22 ~ fetchCoin ~ coins", coins);
 
   coins.forEach((crypto) => {
     const cryptoCard = document.createElement("div");
@@ -53,10 +55,12 @@ const fetchCoin = async () => {
     values.className = "values";
 
     const valuesH4 = document.createElement("h4");
-    valuesH4.textContent = crypto.priceUsd;
+    valuesH4.textContent = numeral(crypto.priceUsd).format("$0,0.00");
 
     const valueP = document.createElement("p");
-    valueP.textContent = crypto.changePercent24Hr;
+    valueP.textContent = numeral(crypto.changePercent24Hr / 100).format(
+      "0.00%"
+    );
 
     values.append(valuesH4);
     values.append(valueP);

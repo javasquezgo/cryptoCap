@@ -79,10 +79,14 @@
   font-size: 2.4rem;
   line-height: 32px;
   color: $font-light;
+  margin-bottom: 24px;
 }
 
 .trend-card {
   display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  width: 100%;
 }
 
 .crypto-card {
@@ -102,11 +106,45 @@
 }
 
 .crypto-data {
+  width: 221px;
   @extend %flex;
   height: 50%;
+  & p {
+    font-family: $rale;
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 21px;
+    color: $font-light;
+  }
+
+  & span {
+    font-family: $rale;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 21px;
+    background-color: $light-grey;
+    padding: 0 6px;
+    border-radius: 4px;
+  }
 }
 
 .crypto-value {
   @extend %flex;
   height: 50%;
+
+  & .values {
+    & h4 {
+      font-weight: 500;
+      font-size: 2.4rem;
+      line-height: 28px;
+      color: $font-light;
+      margin-bottom: 9px;
+    }
+    & p {
+      font-weight: 500;
+      font-size: 1.8rem;
+      line-height: 28px;
+      color: $font-grey;
+    }
+  }
 }
